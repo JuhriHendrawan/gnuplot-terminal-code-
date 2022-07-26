@@ -1,0 +1,30 @@
+
+set terminal eps size 2.5cm,3cm font "Times,11"
+set output "Electron-dens-A.eps"
+
+#set multiplot
+set nokey
+
+set ytics 1
+
+set xra [0:1]
+set yra [0.5:5.5]
+set ytics 1
+set xtics 0.5
+set mxtics 5
+set grid
+set ytics ("Au1" 1,"Au2" 2, "Au3" 3, "Pb" 4, "S" 5)
+
+set lmargin 5
+set rmargin 1
+set tmargin 2
+set bmargin 3
+#set origin 0,0
+#set size 0.55,1 
+set label "A" at 0.5,6 center front tc "blue"
+set label center "Electron Density" at 0.5,-1 center front tc "black"
+plot "DE0" using 2:1  w linespoint pointtype 7 ps 0.5
+
+
+# {/Symbol D}E_{F0}
+pause -1

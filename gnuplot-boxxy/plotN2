@@ -1,0 +1,42 @@
+
+set terminal eps size 4cm,3cm font "Times,11"
+set output "Electron-dens-BC.eps"
+
+set multiplot
+set nokey
+
+set ytics 1
+
+set xra [0:1]
+set yra [0.5:5.5]
+set ytics 1
+set xtics 0.5
+set mxtics 5
+set grid
+set ytics ("Au1" 1,"Au2" 2, "Au3" 3, "S" 4, "Pb" 5)
+
+set lmargin 5
+set rmargin 0.5
+set tmargin 2
+set bmargin 3
+set origin 0,0
+set size 0.55,1 
+set label "B" at 0.5,6 center front tc "blue"
+set label "Electron Density" at 1,-1 center front tc "black"
+plot "DE1" using 2:1  w linespoint pointtype 7 ps 0.5
+
+unset label
+
+
+set ytics (" " 1," " 2, " " 3, " " 4, " " 5)
+set lmargin 1.5
+set rmargin 1
+set tmargin 2
+#unset ytics
+set origin 0.55,0
+set size 0.45,1
+set label "C" at 0.5,6 center front tc "red"
+plot "DE2" using 2:1 w linespoint pointtype 7 ps 0.5
+
+
+pause -1

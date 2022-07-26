@@ -1,0 +1,37 @@
+set terminal eps size 2.5cm,3cm font "Times,11"
+set output "Electron-dens-A-inter.eps"
+
+#set multiplot
+set nokey
+
+set ytics 1
+
+#set style data histograms
+#set style histogram cluster 
+set style data histograms
+set style histogram cluster 
+
+
+
+set xra [0:1]
+set yra [-0.25:4.75]
+set ytics 1
+set xtics 0.5
+set mxtics 5
+set grid
+set ytics ("Au_{1st}" 0.25,"Au_{2nd}" 1.25, "Au_{3rd}" 2.25, "Pb" 3.25, "S" 4.25) offset 0.5,0
+
+set lmargin 5
+set rmargin 1
+set tmargin 2
+set bmargin 3
+#set origin 0,0
+#set size 0.55,1 
+set label "A" at 0.5,5.5 center front tc "blue"
+set label center "Electron Density" at 0.5,-2 center front tc "black"
+set style fill transparent solid 0.5
+plot "DE0-inter" using 2:1:(0.0):2:($1-0.5):0.0 w boxxyerrorbars lc "blue"
+
+
+# {/Symbol D}E_{F0}
+pause -1
